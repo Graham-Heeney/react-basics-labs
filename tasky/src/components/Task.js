@@ -6,6 +6,8 @@ const Task = (props) => {
             <p>{props.title}</p>
             <p>Due: {props.deadline}</p>
             <p className="taskDescription">{props.description}</p> {/* Use description prop */}
+            <button onClick={props.markDone} className='doneButton'>Done</button>
+
         </div>
     );
 }
