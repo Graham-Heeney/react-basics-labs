@@ -8,6 +8,7 @@ const Task = (props) => {
             <p className="taskDescription">{props.description}</p> {/* Use description prop */}
             <button onClick={props.markDone} className='doneButton'>Done</button>
             <button className='deleteButton' onClick={props.deleteTask}>Delete</button>
+            
 
 
         </div>

@@ -27,6 +27,30 @@ function App() {
     tasks.splice(taskIndex, 1);
     setTaskState({tasks});
   } 
+  const formChangeHandler = (event) => {
+    let form = {...formState};
+
+    switch(event.target.name) {
+      case "title":
+          form.title = event.target.value;
+          break;
+      case "description":
+          form.description = event.target.value;
+          break;
+      case "deadline":
+          form.deadline = event.target.value;
+          break;
+      default:
+          form = formState;
+    }
+    setFormState(form);
+  }
+
+  const [ formState, setFormState ] = useState({
+    title: "",
+    description: "",
+    deadline: ""
+  });
   return (
     <div className="container">
       <h1>Tasky</h1>
@@ -42,7 +66,13 @@ function App() {
 
     />
   ))}
-        <AddTaskForm />
+        <AddTaskForm change={formChangeHandler}
+         />  
+         
+         console.log(formState);
+
+
+        
 
     </div>
   
